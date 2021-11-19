@@ -1,39 +1,39 @@
 export default {
-  id: 'cosmos-hub-mainnet',
-  name: 'Cosmos Mainnet',
+  id: 'pan-chain',
+  name: 'MOONBYS PAN Testnet',
   description:
-    'Cosmos is a network of independent parallel blockchains, powered by BFT consensus algorithms like Tendermint.',
+    'PAN is the first Moonbys public testnet.',
   logo: `logo.svg`,
-  website: 'https://cosmos.network',
+  website: 'https://moonbys.com',
   // apiURL: 'http://localhost:8010/proxy',
-  apiURL: 'https://api.cosmos.network',
-  rpcURL: 'https://rpc.cosmos.network',
-  minBlockHeight: 5200792, // actually 5200791, but it has the wrong block time.
-  stakingDenom: 'ATOM',
+  apiURL: 'http://139.59.167.214:1317/',
+  rpcURL: 'http://139.59.167.214:26657/',
+  minBlockHeight: 250000, // actually 5200791, but it has the wrong block time.
+  stakingDenom: 'PAN',
   coinLookup: [
     {
-      viewDenom: 'ATOM',
-      chainDenom: 'uatom',
+      viewDenom: 'PAN',
+      chainDenom: 'upan',
       chainToViewConversionFactor: 1e-6,
       icon: `currencies/atom.png`,
     },
   ],
-  addressPrefix: 'cosmos',
-  validatorAddressPrefix: 'cosmosvaloper',
-  validatorConsensusaddressPrefix: 'cosmosvalcons', // needed to map validators from staking queries to the validator set
+  addressPrefix: 'pan',
+  validatorAddressPrefix: 'panvaloper',
+  validatorConsensusaddressPrefix: 'panvalcons', // needed to map validators from staking queries to the validator set
   HDPath: `m/44'/118'/0'/0/0`,
-  lockUpPeriod: `3 days`,
+  lockUpPeriod: `14 days`,
   fees: {
     default: {
       gasEstimate: 350000,
       feeOptions: [
         {
-          denom: 'ATOM',
+          denom: 'uPAN',
           amount: 0.001,
         },
       ],
     },
   },
-  icon: `https://v1.cosmos.network/img/brandmark.c15d55f6.png`,
+  icon: `https://moonbys.com/favicon.ico`,
   localSigning: true, // this is only to be used as a developer tool - never deployed in production or for mainnet chains
 }
